@@ -133,7 +133,7 @@ h6 {
     float: right;
     margin-right: 40px;
     margin-top: 200px; 
-    position: relative;
+    position: absolute;
 }
 
 .banner-social-buttons {
