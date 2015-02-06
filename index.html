@@ -199,7 +199,39 @@
                     <p class="lead">В вашем распоряжении будет комфотный номер с оборудованной кухней, просторной ванной комнатой и террасой, откуда открывается потрясающий вид на море. Средняя площадь каждого номера - 60м<sup>2</sup> </p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                   
+                    <form method="post" enctype="text/plain">
+  
+                            
+                        <div class="form-group">
+                            <label for="name">Имя</label>
+                            <input type="name" class="form-control" id="name" placeholder="Введите, пожалуйста, Ваше имя">
+                        </div>
+                        <div class="form-group">
+                            <label for="number">Номер телефона</label>
+                            <input type="tel" class="form-control" id="number" placeholder="Введите, пожалуйста, Ваш номер телефона">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Электронный адрес</label>
+                            <input type="email" class="form-control" id="email" placeholder="Введите, пожалуйста, Ваш электронный адрес">
+                        </div>
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <label for="arrivaldate">День заезда</label>
+                                <input type="date" id="arrivaldate" style="width:130px;margin-left:3px;">
+                            </div>                           
+                            <div class="form-group">
+                                <label for="departuredate" style="margin-left:3px;">Дата отъезда</label>
+                                <input type="date" id="departuredate" style="width:130px;margin-left:3px;">                           
+                            </div>
+                        </div>
+                        <div class="form-inline" style="margin-top:15px; margin-bottom:10px;">
+                            <div class="form-group">
+                                <label for="guests">Количество гостей</label>
+                                <input type="number" class="form-control" id="number" style="width:67px;margin-left:3px;">                         
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-default">Забронировать</button>
+                    </form>
                 </div>
             </div>
 
@@ -208,6 +240,13 @@
 
     </div>
     <!-- /.content-section-a -->
+    <?PHP
+        $email = $_POST["emailaddress"];
+        $to = "hola@lavidasinlimites.com";
+        $subject = "New booking";
+        $headers = "From: $email\n";
+        $message = "A visitor to your site has sent the following email address to be added to your mailing list.\n";
+    ?>
 
     <div id="contacts">
 
