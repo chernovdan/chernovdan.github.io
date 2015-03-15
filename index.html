@@ -32,6 +32,62 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#send_message').click(function(e){
+                e.preventDefault();
+                var error = false;
+                var topic = $('#topic').val();
+                var name = $('#name').val();
+                var email = $('#email').val();
+                var subject = $('#subject').val();
+                var message = $('#message').val();
+                if(topic.length == 0){
+                    var error = true;
+                    $('#topic_error').fadeIn(500);
+                } else {
+                    $('#topic_error').fadeOut(500);
+                }
+                if(name.length == 0){
+                    var error = true;
+                    $('#name_error').fadeIn(500);
+                } else {
+                    $('#name_error').fadeOut(500);
+                }
+                if(email.length == 0 || email.indexOf('@') == '-1'){
+                    var error = true;
+                    $('#email_error').fadeIn(500);
+                } else {
+                    $('#email_error').fadeOut(500);
+                }
+                if(subject.length == 0){
+                    var error = true;
+                    $('#subject_error').fadeIn(500);
+                } else {
+                    $('#subject_error').fadeOut(500);
+                }
+                if(message.length == 0){
+                    var error = true;
+                    $('#message_error').fadeIn(500);
+                } else {
+                    $('#message_error').fadeOut(500);
+                } if(error == false){
+                    $('#send_message').attr({'disabled' : 'true', 'value' : 'Sending...' });
+                    $.post("send_email.php", $("#contact_form").serialize(),function(result){
+                        if(result == 'sent'){
+                            $('#cf_submit_p').remove();
+                            $('#mail_success').fadeIn(500);
+                        } else {
+                            $('#mail_fail').fadeIn(500);
+                            $('#send_message').removeAttr('disabled').attr('value', 'Send Message');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -40,7 +96,6 @@
 
         ga('create', 'UA-57990140-1', 'auto');
         ga('send', 'pageview');
-
     </script>
 
     <link rel="stylesheet" href="css/responsiveslides.css">
@@ -93,10 +148,10 @@
                         <a href="#rest">Место</a>
                     </li>
                     <li>
-                        <a href="#environment">Среда</a>
+                        <a href="#rooms">Номера</a>
                     </li>
                     <li>
-                        <a href="#rooms">Номера</a>
+                        <a href="#environment">Среда</a>
                     </li>
                     <li>
                         <a href="#contacts">Контакты</a>
@@ -162,7 +217,90 @@
     </div>
     <!-- /.content-section-a -->
 
-    <div id="environment" class="content-section-b">
+    <div id="rooms" class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Аппарт-центр на первой линии море</h2>
+                    <p class="lead">8 абсолютно новых аппартаментов, каждый из которых расчитан на 2-4 человека. Все аппартаменты состоят из спальни, просторной гостинной, просторной ванной комнаты, кухни, оборудованной плитой, микроволновой печью, посудомоичной машиной и террасой/патио, откуда открывается потрясающий вид на море. Площадь номеров  50 м<sup>2</sup> - 60м<sup>2</sup> </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Сезон</th>
+                                <th>Стандарт</th>
+                                <th>Улучшенный</th>
+                            </tr>
+                        </thead>
+                        <tr class="warning">
+                            <td>Низкий <br> (1/11 -24/12) (10/01 - 15/05)</td>
+                            <td>80 Евро/Сутки</td>
+                            <td>100 Евро/Сутки</td>
+                        </tr>
+                        <tr class="info">
+                            <td>Средний <br> (1/09 - 1/11) (24/12 - 10/01) (15/05 - 15/07)</td>
+                            <td>100 Евро/Сутки</td>
+                            <td>120 Евро/Сутки</td>
+                        </tr>
+                        <tr class="success">
+                            <td>Высокий <br> (15/07 - 1/09)</td>
+                            <td>120 Евро/Сутки</td>
+                            <td>140 Евро/Сутки</td>
+                        </tr>
+                    </table>
+
+                    <p>Заявку на бронирование номеров Вы можете прислать на электронную почту <a href="mailto:hola@lavidasinlimites.com" target="_blank">hola@lavidasinlimites.com</a></p>
+
+                    <!--<form method="post" action="bookingtest.php">
+                        <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" class="form-control" name="name" placeholder="Введите, пожалуйста, Ваше имя">
+                        </div>
+                        <div class="form-group">
+                        <label for="number">Номер телефона</label>
+                        <input type="tel" class="form-control" name="number" placeholder="Введите, пожалуйста, Ваш номер телефона">
+                        </div>
+                        <div class="form-group">
+                        <label for="email">Электронный адрес</label>
+                        <input type="email" class="form-control" name="email" placeholder="Введите, пожалуйста, Ваш электронный адрес">
+                        </div>
+                        <div class="form-inline">
+                        <div class="form-group">
+                        <label for="arrivaldate">День заезда</label>
+                        <input type="date" name="arrivaldate" style="width:130px;margin-left:3px;">
+                        </div>                           
+                        <div class="form-group">
+                        <label for="departuredate" style="margin-left:3px;">Дата отъезда</label>
+                        <input type="date" name="departuredate" style="width:130px;margin-left:3px;">                          
+                        </div>
+                        </div>
+                        <div class="form-inline" style="margin-top:15px; margin-bottom:10px;">
+                        <div class="form-group">
+                        <label for="guests">Количество гостей</label>
+                        <input type="number" class="form-control" name="guests" style="width:67px;margin-left:3px;"> 
+                        </div>
+                        </div>
+                        <button type="submit" name="book" id="book" class="btn btn-default">Забронировать</button>
+                    </form>-->
+
+
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div id="environment" class="content-section-a">
 
         <div class="container">
 
@@ -186,61 +324,6 @@
 
     </div>
     <!-- /.content-section-b -->
-
-    <div id="rooms" class="content-section-a">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Просторные номера</h2>
-                    <p class="lead">В вашем распоряжении будет комфотный номер с оборудованной кухней, просторной ванной комнатой и террасой, откуда открывается потрясающий вид на море. Средняя площадь каждого номера - 60м<sup>2</sup> </p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <!--<form method="post" action="http://formspree.io/hola@lavidasinlimites.com">
-  
-                            
-                        <div class="form-group">
-                            <label for="name">Имя</label>
-                            <input type="name" class="form-control" id="name" placeholder="Введите, пожалуйста, Ваше имя">
-                        </div>
-                        <div class="form-group">
-                            <label for="number">Номер телефона</label>
-                            <input type="tel" class="form-control" id="number" placeholder="Введите, пожалуйста, Ваш номер телефона">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Электронный адрес</label>
-                            <input type="email" class="form-control" id="email" placeholder="Введите, пожалуйста, Ваш электронный адрес">
-                        </div>
-                        <div class="form-inline">
-                            <div class="form-group">
-                                <label for="arrivaldate">День заезда</label>
-                                <input type="date" id="arrivaldate" style="width:130px;margin-left:3px;">
-                            </div>                           
-                            <div class="form-group">
-                                <label for="departuredate" style="margin-left:3px;">Дата отъезда</label>
-                                <input type="date" id="departuredate" style="width:130px;margin-left:3px;">                           
-                            </div>
-                        </div>
-                        <div class="form-inline" style="margin-top:15px; margin-bottom:10px;">
-                            <div class="form-group">
-                                <label for="guests">Количество гостей</label>
-                                <input type="number" class="form-control" id="guests" style="width:67px;margin-left:3px;">                         
-                            </div>
-                        </div>
-                        <button type="submit" name="book" class="btn btn-default">Забронировать</button>
-                    </form>-->
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-a -->
-
 
     <div id="contacts">
 
