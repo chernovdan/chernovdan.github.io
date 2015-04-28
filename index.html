@@ -10,6 +10,7 @@
     <meta name="author" content="LaVidaSinLimites">
     <meta name="keywords" content="Центр, Реабилитационный центр, Отдых, Отдых в испании, Отдых в Испании для инвалидов, Отдых в Испании для пожилых людей, Отдых в Испании для лиц с ограниченными возможностями, Отдых в Испании на берегу,  
     Отдых для инвалидов, Отдых для пожилых людей, Отдых для лиц с ограниченными возможностями, Отдых на берегу, Аппартаменты, Аппартаменты в Испании">
+    <link rel="icon" type="image/png" href="logo.png"/>
 
     <title>Реабилитационный центр - Жизнь без границ</title>
 
@@ -121,6 +122,19 @@
         display: block;
         width: 100%;
     }
+
+    .linebreak {
+        margin-top: 20px;
+    }
+
+    .dis {
+        margin-right: auto;
+        margin-left: auto;
+        width: 200px;
+        height: 200px;
+    }
+
+
   </style>
 
 </head>
@@ -142,13 +156,19 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
+                
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Реабилитационный центр</a>
+
+                <a class="navbar-brand" rel="home" href="#" title="La Vida Sin Limites">
+                    <img style="max-width:100px; margin-top: -7px;" src="img/logo.png">
+                </a>
+                
+                <!--<a class="navbar-brand" href="#">Реабилитационный центр</a>-->
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -207,16 +227,20 @@
                     <h2 class="section-heading">Empuriabrava - уютное и красивое место для комфортного отдыха</h2>
                     <p class="lead">Разнообразие видов спорта и развлечений для детей и молодежи. Тишина и комфорт для пожилых. Безопасность и стабильность для всей семьи!</p>
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6 linebreak">
+                    <!--<hr class="section-heading-spacer">
+                    <div class="clearfix"></div>-->
 
-                    <ul class="rslides" id="slider1">
+                    <!--<ul class="rslides" id="slider1">
                         <li><img src="img/1.JPG" alt=""></li>
                         <li><img src="img/2.JPG" alt=""></li>
                         <li><img src="img/3.JPG" alt=""></li>
                         <li><img src="img/4.JPG" alt=""></li>
                         <li><img src="img/5.JPG" alt=""></li>
-                    </ul>
-
+                    </ul>-->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/F6Aa5uDcMYI" allowfullscreen></iframe>
+                    </div>
                 </div>
                 
             </div>
@@ -238,9 +262,9 @@
                     <h2 class="section-heading">Апарт-центр на первой линии моря, до пляжа 100 метров!</h2>
                     <p class="lead">8 абсолютно новых апартаментов, каждый из которых расчитан на семью до 4 человек. Все апартаменты состоят из спальни, просторной гостиной, просторной ванной комнаты, кухни, оборудованной плитой, холодильником, микроволновой печью, посудомоечной машиной и террасой/патио, откуда открывается потрясающий вид на море. Площадь номеров  50 м<sup>2</sup> - 60м<sup>2</sup> </p>
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6 linebreak">
+                    <!--<hr class="section-heading-spacer">
+                    <div class="clearfix"></div>-->
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -320,7 +344,10 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6 linebreak">
+                    <img class="img-responsive dis" src="img/disabled.png" alt="">
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Доступная среда</h2>
@@ -328,9 +355,6 @@
                     лифт на второй этаж, пандусы, туалеты, ванные комнаты, жилые помещения, приспособленные для людей на колясках – наш вклад в ваш отдых и жизнь
                     без границ.
                     </p>
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/disabled.png" alt="">
                 </div>
             </div>
 
