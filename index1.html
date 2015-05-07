@@ -20,6 +20,9 @@
     <!-- Custom CSS -->
     <link href="css/landing-page.css" rel="stylesheet">
 
+    <!-- Slider CSS -->
+    <link href="css/slider.css" rel="stylesheet">
+
     <!-- Custom Fonts -->
     <link href="font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
@@ -104,16 +107,18 @@
     <script src="js/responsiveslides.min.js"></script>
     <script>
     // You can also use "$(window).load(function() {"
-        var j = jQuery.noConflict();
+        //var j = jQuery.noConflict();
 
-        j(document).ready(function () {
-            j("#slider1").responsiveSlides({
-                maxwidth: 1500,
-                speed: 1000,
-                random: true    
-            });
-        });
+        //j(document).ready(function () {
+            //j("#slider1").responsiveSlides({
+              //  maxwidth: 1500,
+               // speed: 1000,
+               // random: true    
+           // });
+       // });
   </script>
+
+  <script src="js/slider.js"></script>
 
   <style>
     .plan {
@@ -286,9 +291,6 @@
 
                     <p>Заявку на бронирование номеров Вы можете прислать на электронную почту <a href="mailto:hola@lavidasinlimites.com" target="_blank">hola@lavidasinlimites.com</a></p>
 
-                    <a href="https://www.airbnb.ru/rooms/6280517" target="_blank"><img src="img/airbnb.png"/></a>
-                    <a href="https://www.facebook.com/pages/La-Vida-Sin-Limites/1599616063656243" target="_blank"><img src="img/facebook.png" style="margin-left:10px;"/></a>
-
                     <!--<form method="post" action="bookingtest.php">
                         <div class="form-group">
                         <label for="name">Имя</label>
@@ -326,6 +328,32 @@
 
                 <div class="col-md-16">
 
+                    <section class="cd-single-item">
+                        <div class="cd-slider-wrapper">
+                            <ul class="cd-slider">
+                                <li class="selected"><img src="img/1.jpg" alt="Image 1"></li>
+                                <li><img src="img/2.jpg" alt="Image 1"></li>
+                                <li><img src="img/3.jpg" alt="Image 2"></li>
+                            </ul> <!-- cd-slider -->
+
+                            <ul class="cd-slider-navigation">
+                            <li><a href="#0" class="cd-prev inactive">Next</a></li>
+                            <li><a href="#0" class="cd-next">Prev</a></li>
+                            </ul> <!-- cd-slider-navigation -->
+
+                            <a href="#0" class="cd-close">Close</a>
+                        </div> <!-- cd-slider-wrapper -->
+
+                        <div class="cd-item-info">
+                            <h2>Produt Title</h2>
+                            <p>Lorem ipsum dolor sit amet...</p>
+                            <button class="add-to-cart">Add to cart</button>                        
+                        </div> <!-- cd-item-info -->
+                    </section> <!-- cd-single-item -->
+
+                    <section class="cd-content">
+                    <!--  other content here -->
+                    </section>
                     <!--<ul class="rslides" id="slider1">
                         <li><img src="img/plan.png" alt=""></li>
                         <li><img src="img/2.JPG" alt=""></li>
@@ -333,7 +361,7 @@
                         <li><img src="img/4.JPG" alt=""></li>
                         <li><img src="img/5.JPG" alt=""></li>
                     </ul>-->
-                    <img class="plan" src="img/plan.png" alt="" />
+                    <!--<img class="plan" src="img/plan.png" alt="">-->
                 </div>
 
             </div>
